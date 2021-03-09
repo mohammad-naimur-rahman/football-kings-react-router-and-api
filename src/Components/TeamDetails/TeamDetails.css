@@ -1,0 +1,68 @@
+.team-details-banner {
+  height: 40vh;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("../../Images/team-banner.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.details {
+  padding: 15px 0;
+  background-color: #8c0000;
+}
+.team-details-badge {
+  width: 150px;
+}
+.details-info-box {
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+.details-img {
+  height: 180px;
+}
+.social-icons {
+  text-align: center;
+  margin: 20px 0;
+}
+.social-icons span {
+  font-size: 25px;
+  margin: 20px;
+  border-radius: 5000px;
+  color: white;
+  cursor: pointer;
+}
+.twitter {
+  background-color: #1da1f2;
+  padding: 10px 14px;
+}
+.facebook {
+  background-color: #3b5998;
+  padding: 10px 14px;
+}
+.youtube {
+  background-color: #ff0000;
+  padding: 10px 12px;
+}
+@media (max-width: 768px) {
+  .details-info-box {
+    flex-direction: column;
+  }
+  .details-img {
+    height: 120;
+  }
+  .team-details-badge {
+    width: 120px;
+  }
+}
+
+@media (max-width: 500px) {
+  .details-img {
+    width: 95%;
+    height: auto;
+  }
+}

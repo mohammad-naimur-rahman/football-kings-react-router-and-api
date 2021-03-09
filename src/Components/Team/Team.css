@@ -1,0 +1,27 @@
+.team {
+  width: 300px;
+  box-shadow: 0 10px 10px rgba(158, 158, 158, 0.3);
+  transition: 0.4s;
+}
+.team-badge {
+  transition: 0.4s;
+}
+.team:hover {
+  box-shadow: 0 10px 10px rgba(158, 158, 158, 0.5);
+  transform: translateY(-5px);
+}
+.team:hover .team-badge {
+  transform: rotateY(180deg);
+}
+.team-badge {
+  height: 80px;
+}
+
+@media (max-width: 400px) {
+  .team {
+    width: 280px;
+  }
+  .team-badge {
+    height: 70px;
+  }
+}
