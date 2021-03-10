@@ -11,8 +11,15 @@ const TeamDetails = () => {
     const { teamID } = useParams();
 
     const [teamDetail, setTeamDetail] = useState([]);
-    const { strCountry, strSport, strTeamBadge, strTeam, strDescriptionEN, strGender, intFormedYear, strFacebook, strTwitter, strYoutube } = teamDetail;
+    const { strCountry, strSport, strTeamBadge, strTeam, strDescriptionEN, strGender, intFormedYear, strFacebook, strTwitter, strYoutube, strStadiumDescription, strTeamBanner } = teamDetail;
 
+    const teamDetailsStyle = {
+        height: '30vh',
+        backgroundImage: `linear-gradient(to right, rgba(0,0,0,.5), rgba(0,0,0,.5)), url(${strTeamBanner})`,
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover'
+    }
     useEffect(() => {
         const url = `https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${teamID}`
         fetch(url)
@@ -22,8 +29,8 @@ const TeamDetails = () => {
     }, [teamID]);
     return (
         <div className='container-fluid' style={{ margin: 0, padding: 0 }}>
-            <div className="team-details-banner d-flex justify-content-center align-items-center">
-                <img src={strTeamBadge} className='team-details-badge' alt="" />
+            <div className="team-details-banner d-flex justify-content-start align-items-center" style={teamDetailsStyle}>
+                <img src={strTeamBadge} className='team-details-badge mx-5' alt="" />
             </div>
             <div className="details">
                 <div className="container">
@@ -45,6 +52,7 @@ const TeamDetails = () => {
                     </div>
                     <div className="details-text py-5 px-4">
                         <p className='text-white text-justify'>{strDescriptionEN}</p>
+                        <p className='text-white text-justify'>{strStadiumDescription}</p>
                     </div>
                     <div className="social-icons">
                         <a href={'https://' + strTwitter} target="_blank" rel="noreferrer"><span className='twitter'><FontAwesomeIcon icon={faTwitter} /></span></a>
