@@ -35,18 +35,23 @@
   border-radius: 5000px;
   color: white;
   cursor: pointer;
+  display: inline-block;
+  transition: 0.3s;
+}
+.social-icons span:hover {
+  transform: translateY(-5px);
 }
 .twitter {
   background-color: #1da1f2;
-  padding: 10px 14px;
+  padding: 10px 16px;
 }
 .facebook {
   background-color: #3b5998;
-  padding: 10px 14px;
+  padding: 10px 16px;
 }
 .youtube {
   background-color: #ff0000;
-  padding: 10px 12px;
+  padding: 10px 14px;
 }
 @media (max-width: 768px) {
   .details-info-box {

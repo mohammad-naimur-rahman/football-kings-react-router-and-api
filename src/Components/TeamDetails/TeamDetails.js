@@ -11,7 +11,7 @@ const TeamDetails = () => {
     const { teamID } = useParams();
 
     const [teamDetail, setTeamDetail] = useState([]);
-    const { strCountry, strSport, strTeamBadge, strTeam, strDescriptionEN, strGender, intFormedYear } = teamDetail;
+    const { strCountry, strSport, strTeamBadge, strTeam, strDescriptionEN, strGender, intFormedYear, strFacebook, strTwitter, strYoutube } = teamDetail;
 
     useEffect(() => {
         const url = `https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${teamID}`
@@ -47,9 +47,9 @@ const TeamDetails = () => {
                         <p className='text-white text-justify'>{strDescriptionEN}</p>
                     </div>
                     <div className="social-icons">
-                        <span className='twitter'><FontAwesomeIcon icon={faTwitter} /></span>
-                        <span className='facebook'><FontAwesomeIcon icon={faFacebook} /></span>
-                        <span className='youtube'><FontAwesomeIcon icon={faYoutube} /></span>
+                        <a href={'https://' + strTwitter} target="_blank" rel="noreferrer"><span className='twitter'><FontAwesomeIcon icon={faTwitter} /></span></a>
+                        <a href={'https://' + strFacebook} target="_blank" rel="noreferrer"><span className='facebook'><FontAwesomeIcon icon={faFacebook} /></span></a>
+                        <a href={'https://' + strYoutube} target="_blank" rel="noreferrer"><span className='youtube'><FontAwesomeIcon icon={faYoutube} /></span></a>
                     </div>
                 </div>
             </div>
